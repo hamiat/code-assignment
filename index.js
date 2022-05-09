@@ -61,14 +61,27 @@ class MovieAPI {
 
     return getTopAndBottomTwo;
   }
+
+  getWithoutThumbsAndSubs() {
+    this.movies.forEach((movie) => {
+      delete movie.subtitle;
+      delete movie.thumb;
+    });
+
+    return this.movies;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case seven
+const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
+console.log(getWithoutThumbsAndSubs);
+
 //case six
-const getTopAndBottomTwo = API.getTopAndBottomTwo();
-console.log(getTopAndBottomTwo);
+//const getTopAndBottomTwo = API.getTopAndBottomTwo();
+//console.log(getTopAndBottomTwo);
 
 //case five
 //const getTopThree = API.getTopThree();
