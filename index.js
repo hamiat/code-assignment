@@ -3,6 +3,7 @@ import moviesData from "./movies.json" assert { type: "json" };
 class MovieAPI {
   constructor(movies) {
     this.movies = movies;
+    this.title = movies.title;
   }
 
   getAllMovies() {
@@ -13,9 +14,22 @@ class MovieAPI {
 
     return this.movies;
   }
+
+  getMoviesSortedByName() {
+    const sortByTitle = this.movies.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+
+    return sortByTitle;
+  }
 }
 
 const API = new MovieAPI(moviesData);
+const getAllMovies = API.getAllMovies();
+
+//case two
+const getMoviesSortedByName = API.getMoviesSortedByName();
+console.log(getMoviesSortedByName);
+
 //case one
-//const getAllMovies = API.getAllMovies();
 //console.log(getAllMovies);
