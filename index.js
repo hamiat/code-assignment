@@ -105,14 +105,39 @@ class MovieAPI {
       return matchId;
     }
   }
+
+  setNewMovie(description, subtitle, url, thumb, title, genre) {
+    this.movies.push({
+      description,
+      source: [url],
+      subtitle,
+      thumb,
+      title,
+      genre,
+    });
+    this.getAllMovies();
+
+    return this.movies;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case eleven
+const setNewMovie = API.setNewMovie(
+  "About a girl",
+  "Girls fight everyone.",
+  "url",
+  "pic.img",
+  "Girl Fighter",
+  "Action"
+);
+console.log(setNewMovie);
+
 //case ten
-const setNewTitle = API.setNewTitle("4", "Camels Toes");
-console.log(setNewTitle);
+//const setNewTitle = API.setNewTitle("4", "Camels Toes");
+//console.log(setNewTitle);
 
 //case nine
 //const deleteMovieById = API.deleteMovieById("13");
