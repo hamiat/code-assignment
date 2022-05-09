@@ -33,14 +33,26 @@ class MovieAPI {
 
     return getGenre;
   }
+
+  getBottomToTopRated() {
+    const sortRatings = this.movies.sort((a, b) =>
+      a.rating > b.rating ? 1 : -1
+    );
+
+    return sortRatings;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case four
+const getBottomToTopRated = API.getBottomToTopRated();
+console.log(getBottomToTopRated);
+
 //case three
-const getMovieByGenre = API.getMovieByGenre("Comedy");
-console.log(getMovieByGenre);
+//const getMovieByGenre = API.getMovieByGenre("Comedy");
+//console.log(getMovieByGenre);
 
 //case two
 //const getMoviesSortedByName = API.getMoviesSortedByName();
