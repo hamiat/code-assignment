@@ -5,6 +5,7 @@ class MovieAPI {
     this.movies = movies;
     this.title = movies.title;
     this.genre = movies.genre;
+    this.idErrorMessage = "Sorry, could not find a movie with the id.";
   }
 
   getAllMovies() {
@@ -70,14 +71,28 @@ class MovieAPI {
 
     return this.movies;
   }
+
+  getMovieById(id) {
+    const findId = this.movies.find((movie) => Math.floor(id) === movie.id);
+
+    if (findId) {
+      return findId;
+    } else {
+      return this.idErrorMessage;
+    }
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
 //case seven
-const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
-console.log(getWithoutThumbsAndSubs);
+const getMovieById = API.getMovieById("8");
+console.log(getMovieById);
+
+//case seven
+//const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
+//console.log(getWithoutThumbsAndSubs);
 
 //case six
 //const getTopAndBottomTwo = API.getTopAndBottomTwo();
