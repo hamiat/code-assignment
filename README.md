@@ -1,6 +1,6 @@
 # Tech Trainee Code Test
-Hello and Welcome!  
-This is a Movie API written as a class which containing 11 different methods (cases). The API takes in data from an imported JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the ```getAllMovies()``` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. 
+#### Hello and Welcome!  
+This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from an imported JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the ```getAllMovies()``` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. 
 
 The method itself: 
 ```javascript
@@ -20,6 +20,8 @@ const getAllMovies = API.getAllMovies();
 console.log(getAllMovies);
   
 ```
+The expected output: 
+![screen shot of console with the retrieved data](https://cdn.imageupload.workers.dev/n6A7iGkR_Sk%C3%A4rmklipp.PNG)
 You can test each method (case) by passing its declared variable to the console.log() function. 
 
 ## The cases
