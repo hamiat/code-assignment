@@ -1,6 +1,31 @@
 # Tech Trainee Code Test
+Hello and Welcome!  
+This is a Movie API written as a class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the ```getAllMovies()``` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. 
 
+The method itself: 
+```javascript
+ getAllMovies() {
+    this.movies.forEach((movie, i) => {
+      movie.id = i + 1;
+      movie.rating = Math.floor(Math.random() * 5 + 1);
+    });
+
+    return this.movies;
+  }
+```
+The result can be printed out in the console as following:
+```javascript
+const API = new MovieAPI(moviesData);
+const getAllMovies = API.getAllMovies();
+console.log(getAllMovies);
+  
+```
+You can test each method (case) by passing its declared variable to the console.log() function. 
+
+## Tasks
+The tasks were implemented 
 We are interested in the quality of the implementation rather than the number of features. We value originality and creativity. The application and the code should be of such quality so that it can be read and maintained by other developers.
+
 
 
 Your task is to create a Movie API written as a class using JavaScript that should perform/offer a certain set of methods (listed below). You are to put around **1 hour** on this project. How you solve it is eventually up to you. We will look at everything from readable code, documentation, minimal code duplication, error handling, etc.
