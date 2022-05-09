@@ -73,10 +73,22 @@ class MovieAPI {
   }
 
   getMovieById(id) {
-    const findId = this.movies.find((movie) => Math.floor(id) === movie.id);
+    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 
-    if (findId) {
-      return findId;
+    if (matchId) {
+      return matchId;
+    } else {
+      return this.idErrorMessage;
+    }
+  }
+
+  deleteMovieById(id) {
+    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+
+    if (matchId) {
+      this.movies.splice(matchId, 1);
+      console.log("The movie has been deleted!");
+      return this.movies;
     } else {
       return this.idErrorMessage;
     }
@@ -86,9 +98,13 @@ class MovieAPI {
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
-//case seven
-const getMovieById = API.getMovieById("8");
-console.log(getMovieById);
+//case nine
+const deleteMovieById = API.deleteMovieById("13");
+console.log(deleteMovieById);
+
+//case eight
+//const getMovieById = API.getMovieById("8");
+//console.log(getMovieById);
 
 //case seven
 //const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
