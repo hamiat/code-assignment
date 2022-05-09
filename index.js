@@ -63,7 +63,7 @@ class MovieAPI {
 
   getWithoutThumbsAndSubs() {
     const noSubsOrThumbs = this.movies.map(
-      ({ subtitle, thumb, ...newObj }) => newObj
+      ({ subtitle, thumb, ...rest }) => rest
     );
 
     return noSubsOrThumbs;
@@ -139,4 +139,4 @@ const setNewMovie = API.setNewMovie(
 );
 
 //Insert Case here to what it returns
-console.log(getWithoutThumbsAndSubs);
+console.log(getAllMovies);
