@@ -18,11 +18,11 @@ class MovieAPI {
   }
 
   getMoviesSortedByName() {
-    const sortByTitle = this.movies.sort((a, b) =>
+    const sortedByTitle = this.movies.sort((a, b) =>
       a.title.localeCompare(b.title)
     );
 
-    return sortByTitle;
+    return sortedByTitle;
   }
 
   getMovieByGenre(genre) {
@@ -87,7 +87,6 @@ class MovieAPI {
 
     if (matchId) {
       this.movies.splice(matchId, 1);
-      console.log("The movie has been deleted!");
       return this.movies;
     } else {
       return this.idErrorMessage;
@@ -99,10 +98,9 @@ class MovieAPI {
 
     if (matchId) {
       matchId.title = newTitle;
-      console.log(
-        `Movie id: ${matchId.id} has been updated. The title is now ${matchId.title}.`
-      );
       return matchId;
+    } else {
+      return this.idErrorMessage;
     }
   }
 
@@ -122,54 +120,26 @@ class MovieAPI {
 }
 
 const API = new MovieAPI(moviesData);
-const getAllMovies = API.getAllMovies();
 
-//case eleven
+//Cases
+const getAllMovies = API.getAllMovies();
+const getMoviesSortedByName = API.getMoviesSortedByName();
+const getMovieByGenre = API.getMovieByGenre("Action");
+const getBottomToTopRated = API.getBottomToTopRated();
+const getTopThree = API.getTopThree();
+const getTopAndBottomTwo = API.getTopAndBottomTwo();
+const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
+const getMovieById = API.getMovieById("8");
+const deleteMovieById = API.deleteMovieById("13");
+const setNewTitle = API.setNewTitle("2", "Camels and Hats");
 const setNewMovie = API.setNewMovie(
-  "About a girl",
-  "Girls fight everyone.",
+  "About a girl who fights.",
+  "Girls fights everyone.",
   "url",
   "pic.img",
   "Girl Fighter",
   "Action"
 );
-console.log(setNewMovie);
 
-//case ten
-//const setNewTitle = API.setNewTitle("4", "Camels Toes");
-//console.log(setNewTitle);
-
-//case nine
-//const deleteMovieById = API.deleteMovieById("13");
-//console.log(deleteMovieById);
-
-//case eight
-//const getMovieById = API.getMovieById("8");
-//console.log(getMovieById);
-
-//case seven
-//const getWithoutThumbsAndSubs = API.getWithoutThumbsAndSubs();
-//console.log(getWithoutThumbsAndSubs);
-
-//case six
-//const getTopAndBottomTwo = API.getTopAndBottomTwo();
-//console.log(getTopAndBottomTwo);
-
-//case five
-//const getTopThree = API.getTopThree();
-//console.log(getTopThreeRated);
-
-//case four
-//const getBottomToTopRated = API.getBottomToTopRated();
-//console.log(getBottomToTopRated);
-
-//case three
-//const getMovieByGenre = API.getMovieByGenre("Comedy");
-//console.log(getMovieByGenre);
-
-//case two
-//const getMoviesSortedByName = API.getMoviesSortedByName();
-//console.log(getMoviesSortedByName);
-
-//case one
-//console.log(getAllMovies);
+//Insert Case
+console.log(getAllMovies);
