@@ -1,6 +1,6 @@
 # Tech Trainee Code Test
 Hello and Welcome!  
-This is a Movie API written as a class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the ```getAllMovies()``` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. 
+This is a Movie API written as a class which containing 11 different methods (cases). The API takes in data from an imported JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the ```getAllMovies()``` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. 
 
 The method itself: 
 ```javascript
@@ -22,9 +22,19 @@ console.log(getAllMovies);
 ```
 You can test each method (case) by passing its declared variable to the console.log() function. 
 
-## Tasks
-The tasks were implemented 
-We are interested in the quality of the implementation rather than the number of features. We value originality and creativity. The application and the code should be of such quality so that it can be read and maintained by other developers.
+## The cases
+1) ```getAllMovies()``` When instantiating the class, adds an “id” and a random “rating” from 1 to 5 for each movie before storing it.  
+2) ```getMoviesSortedByName()``` returns the movies sorted by name.
+3) ```getMovieByGenre(genre)``` returns movies from a certain genre. 
+4) ```getBottomToTopRated()``` prints out movies sorted from bottom rated to top rated.
+5) ```getTopThree()``` prints out the three top rated movies.
+6) ```getTopAndBottomTwo()``` returns the 2 top rated movies and 2 bottom rated movies.
+7) ```getWithoutThumbsAndSubs()``` returns the movies with the subtitle and thumb properties filtered out.
+8) ```getMovieById(id)``` returns a movie with a certain id (if found).
+9) ```deleteMovieById(id)``` removes a movie with a certain id (if found).
+10) ```setNewTitle(id, newTitle)``` changes the title of a movie with a certain id (if found). The updated title sent in as an argument to the method.
+11) ```setNewMovie(description, subtitle, url, thumb, title, genre)``` allows the user to add a new movie object to the movie list (supply all properties but the “id” and “rating”. The “id” and “rating” properties added internally by the method.
+		
 
 
 
