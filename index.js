@@ -3,8 +3,6 @@ import moviesData from "./movies.json" assert { type: "json" };
 class MovieAPI {
   constructor(movies) {
     this.movies = movies;
-
-    this.genre = movies.genre;
     this.idErrorMessage = "Sorry, could not find a movie with the id.";
   }
 
@@ -142,4 +140,4 @@ const setNewMovie = API.setNewMovie(
 );
 
 //Insert Case
-console.log(getAllMovies);
+console.log(getMovieByGenre);
