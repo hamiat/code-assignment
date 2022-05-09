@@ -25,7 +25,7 @@ console.log(getAllMovies);
 
 
 ## The cases
-You can test each method (case) by passing its declared variable to the console.log() function. </br></br>
+#### You can test each method (case) by passing its declared variable to the console.log() function. </br></br>
 1) ```getAllMovies()``` When instantiating the class, adds an “id” and a random “rating” from 1 to 5 for each movie before storing it.  
 2) ```getMoviesSortedByName()``` returns the movies sorted by name.
 3) ```getMovieByGenre(genre)``` returns movies from a certain genre. 
