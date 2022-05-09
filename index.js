@@ -4,6 +4,7 @@ class MovieAPI {
   constructor(movies) {
     this.movies = movies;
     this.title = movies.title;
+    this.genre = movies.genre;
   }
 
   getAllMovies() {
@@ -22,14 +23,28 @@ class MovieAPI {
 
     return sortByTitle;
   }
+
+  getMovieByGenre(genre) {
+    const getGenre = this.movies.filter((movie) => {
+      if (genre === movie.genre) {
+        return movie;
+      }
+    });
+
+    return getGenre;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case three
+const getMovieByGenre = API.getMovieByGenre("Comedy");
+console.log(getMovieByGenre);
+
 //case two
-const getMoviesSortedByName = API.getMoviesSortedByName();
-console.log(getMoviesSortedByName);
+//const getMoviesSortedByName = API.getMoviesSortedByName();
+//console.log(getMoviesSortedByName);
 
 //case one
 //console.log(getAllMovies);
