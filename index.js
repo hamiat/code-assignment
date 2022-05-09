@@ -42,21 +42,37 @@ class MovieAPI {
     return sortRatings;
   }
 
-  getTopThreeRated(sortRatings) {
+  getTopThree() {
     const topThree = this.movies
       .sort((a, b) => (a.rating < b.rating ? 1 : -1))
       .slice(0, 3);
 
     return topThree;
   }
+
+  getTopAndBottomTwo() {
+    const sortedMovies = this.movies.sort((a, b) =>
+      a.rating > b.rating ? 1 : -1
+    );
+    const getTopAndBottomTwo = [
+      ...sortedMovies.slice(0, 2),
+      ...sortedMovies.slice(-2),
+    ];
+
+    return getTopAndBottomTwo;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case six
+const getTopAndBottomTwo = API.getTopAndBottomTwo();
+console.log(getTopAndBottomTwo);
+
 //case five
-const getTopThreeRated = API.getTopThreeRated();
-console.log(getTopThreeRated);
+//const getTopThree = API.getTopThree();
+//console.log(getTopThreeRated);
 
 //case four
 //const getBottomToTopRated = API.getBottomToTopRated();
