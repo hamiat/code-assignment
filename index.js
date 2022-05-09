@@ -62,12 +62,11 @@ class MovieAPI {
   }
 
   getWithoutThumbsAndSubs() {
-    this.movies.forEach((movie) => {
-      delete movie.subtitle;
-      delete movie.thumb;
-    });
+    const noSubsOrThumbs = this.movies.map(
+      ({ subtitle, thumb, ...newObj }) => newObj
+    );
 
-    return this.movies;
+    return noSubsOrThumbs;
   }
 
   getMovieById(id) {
@@ -140,4 +139,4 @@ const setNewMovie = API.setNewMovie(
 );
 
 //Insert Case here to what it returns
-console.log(getMovieByGenre);
+console.log(getWithoutThumbsAndSubs);
