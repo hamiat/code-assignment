@@ -20,9 +20,8 @@ const getAllMovies = API.getAllMovies();
 console.log(getAllMovies);
   
 ```
-##### The expected output (click on picture):<br/> 
+##### The expected output (click on picture for better quality):<br/> 
 ![screen shot of console with the retrieved data](https://cdn.glitch.global/2f2d1388-d3f8-4a7c-91cb-e78da3dfcb24/Sk%C3%A4rmklipp.PNG?v=1652107453988)
-
 
 
 ## The cases
@@ -40,13 +39,13 @@ You can test each method (case) by passing its declared variable to the console.
 11) ```setNewMovie(description, subtitle, url, thumb, title, genre)``` allows the user to add a new movie object to the movie list (supply all properties but the “id” and “rating”. The “id” and “rating” properties added internally by the method.
 		
 ## Possible improvements and reflections. 
-#### Possible improvements
+### Possible improvements
 Three of the methods are using this piece of code to find and compare the input id with the ids of the movies:
 ```javascript
 const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 ```
 I am certain can be refactored into a method that can be passed to reduce code duplication. 
 
-#### Reflections
+### Reflections
 Using a library such as React for this would have been more ideal, as the useState hook makes it easier to set a state and manipulate the state with setState function. 
 
