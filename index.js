@@ -41,14 +41,26 @@ class MovieAPI {
 
     return sortRatings;
   }
+
+  getTopThreeRated(sortRatings) {
+    const topThree = this.movies
+      .sort((a, b) => (a.rating < b.rating ? 1 : -1))
+      .slice(0, 3);
+
+    return topThree;
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case five
+const getTopThreeRated = API.getTopThreeRated();
+console.log(getTopThreeRated);
+
 //case four
-const getBottomToTopRated = API.getBottomToTopRated();
-console.log(getBottomToTopRated);
+//const getBottomToTopRated = API.getBottomToTopRated();
+//console.log(getBottomToTopRated);
 
 //case three
 //const getMovieByGenre = API.getMovieByGenre("Comedy");
