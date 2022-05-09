@@ -25,7 +25,7 @@ class MovieAPI {
 
   getMovieByGenre(genre) {
     const getGenre = this.movies.filter((movie) => {
-      if (genre === movie.genre) {
+      if (genre.match(movie.genre)) {
         return movie;
       }
     });
@@ -119,7 +119,7 @@ class MovieAPI {
 
 const API = new MovieAPI(moviesData);
 
-//Cases
+//Cases (methods)
 const getAllMovies = API.getAllMovies();
 const getMoviesSortedByName = API.getMoviesSortedByName();
 const getMovieByGenre = API.getMovieByGenre("Action");
@@ -139,5 +139,5 @@ const setNewMovie = API.setNewMovie(
   "Action"
 );
 
-//Insert Case
+//Insert Case here to what it returns
 console.log(getMovieByGenre);
