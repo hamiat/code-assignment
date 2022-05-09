@@ -3,7 +3,7 @@ import moviesData from "./movies.json" assert { type: "json" };
 class MovieAPI {
   constructor(movies) {
     this.movies = movies;
-    this.title = movies.title;
+
     this.genre = movies.genre;
     this.idErrorMessage = "Sorry, could not find a movie with the id.";
   }
@@ -93,14 +93,30 @@ class MovieAPI {
       return this.idErrorMessage;
     }
   }
+
+  setNewTitle(id, newTitle) {
+    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+
+    if (matchId) {
+      matchId.title = newTitle;
+      console.log(
+        `Movie id: ${matchId.id} has been updated. The title is now ${matchId.title}.`
+      );
+      return matchId;
+    }
+  }
 }
 
 const API = new MovieAPI(moviesData);
 const getAllMovies = API.getAllMovies();
 
+//case ten
+const setNewTitle = API.setNewTitle("4", "Camels Toes");
+console.log(setNewTitle);
+
 //case nine
-const deleteMovieById = API.deleteMovieById("13");
-console.log(deleteMovieById);
+//const deleteMovieById = API.deleteMovieById("13");
+//console.log(deleteMovieById);
 
 //case eight
 //const getMovieById = API.getMovieById("8");
