@@ -2,7 +2,7 @@
 
 ### Hello and Welcome!
 
-This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies.
+This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).
 
 #### Instructions: 
 
@@ -24,7 +24,7 @@ The method itself:</br>
   }
 ``` 
 
-</br>The API (using MovieAPI class) takes in json data (moviesData).  The `const getAllMovies` variable which relates to the `getAllMovies()` method, has been inserted into the console.log() function:  </br>
+</br>The API (using MovieAPI class) takes in json data (moviesData).  The `const getAllMovies` variable (case) which relates to the `getAllMovies()` method, has been inserted into the console.log() function:  </br>
 
 ```javascript
 const API = new MovieAPI(moviesData);
@@ -57,14 +57,13 @@ console.log(getAllMovies);
 
 ### Possible improvements
 
-Three of the methods are using this piece of code to find and compare the input id with the ids of the movies:
-
-```javascript
+* Three of the methods are using this piece of code to find and compare the input id with the ids of the movies. This can probably can be refactored into a method that can be passed into them to reduce code duplication.
+ ```javascript
 const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 ```
-
-I am certain can be refactored into a method that can be passed to reduce code duplication.
+ 
+* Error handling for the getMovieByGenre(genre) method. 
 
 ### Reflections
 
-Using a library such as React for this would have been more ideal, as the useState hook makes it easier to set a state and manipulate the state with setState function.
+I really enjoyed this coding assigment as it felt like a real life exercise (coming from a frontend background). Normally, I would face such a task using a library/framework such as React as its built in hook useState makes working with classes easier, as well as provides a more straight-forward way of rendering the data to thw browser with the JSX syntax .
