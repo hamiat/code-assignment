@@ -1,5 +1,4 @@
-import moviesData from "./movies.json" assert { type: "json" };
-
+const moviesData = require("./movies.json");
 class MovieAPI {
   constructor(movies) {
     this.movies = movies;
