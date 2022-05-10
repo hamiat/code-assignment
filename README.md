@@ -4,6 +4,11 @@
 
 This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from an imported JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies.
 
+### Instructions: 
+
+You can run each case (method) by passing its declared variable to the console.log() function. </br></br>
+
+
 ##### The method itself:
 
 ```javascript
@@ -25,15 +30,13 @@ const getAllMovies = API.getAllMovies();
 console.log(getAllMovies);
 ```
 
-##### The expected output (click on picture for better quality):<br/>
+##### The expected output (in node console):<br/>
 
-![screen shot of console with the retrieved data](https://cdn.glitch.global/2f2d1388-d3f8-4a7c-91cb-e78da3dfcb24/Sk%C3%A4rmklipp.PNG?v=1652107453988)
+![screenshot of node console with the retrieved data](https://cdn.glitch.global/8f88fd75-5f31-4389-9519-d822812032f3/Sk%C3%A4rmklipp.PNG?v=1652185141766)
+
+
 
 ## The cases
-
-#### Instructions:</br>
-
-You can test each method (case) by passing its declared variable to the console.log() function. </br></br>
 
 1. `getAllMovies()` When instantiating the class, adds an “id” and a random “rating” from 1 to 5 for each movie before storing it.
 2. `getMoviesSortedByName()` returns the movies sorted by name.
