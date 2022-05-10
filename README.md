@@ -1,15 +1,17 @@
-# Tech Trainee Code Test
+# Tech Trainee Code Assignment
 
-#### Hello and Welcome!
+### Hello and Welcome!
 
-This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from an imported JSON file (containing movie objects), which is used as input when instantiating the Movie API. <br/><br/> Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies.
+This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies.
 
-### Instructions: 
+#### Instructions: 
 
-You can run each case (method) by passing its declared variable to the console.log() function. </br></br>
+1) With node.js installed run the command "npm run watch". 
+2) You can run each case (method) by passing its declared variable to the console.log() function. </br>
+3) The console will return a result according to its method.</br>
 
-
-##### The method itself:
+##### An example: 
+The method itself:</br>
 
 ```javascript
  getAllMovies() {
@@ -20,9 +22,9 @@ You can run each case (method) by passing its declared variable to the console.l
 
     return this.movies;
   }
-```
+``` 
 
-##### The result can be printed out in the console as following:
+</br>The API (using MovieAPI class) takes in json data (moviesData).  The `const getAllMovies` variable which relates to the `getAllMovies()` method, has been inserted into the console.log() function:  </br>
 
 ```javascript
 const API = new MovieAPI(moviesData);
@@ -30,13 +32,14 @@ const getAllMovies = API.getAllMovies();
 console.log(getAllMovies);
 ```
 
-##### The expected output (in node console):<br/>
+</br>The expected output in the console (as per the provided method):</br>
 
 ![screenshot of node console with the retrieved data](https://cdn.glitch.global/8f88fd75-5f31-4389-9519-d822812032f3/Sk%C3%A4rmklipp.PNG?v=1652185141766)
 
+</br>
 
-
-## The cases
+## The methods 
+##### The methods have the same names as their cases (to makes things a bit less confusing).
 
 1. `getAllMovies()` When instantiating the class, adds an “id” and a random “rating” from 1 to 5 for each movie before storing it.
 2. `getMoviesSortedByName()` returns the movies sorted by name.
