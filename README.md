@@ -65,7 +65,9 @@ const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 :sewing_needle: Error handling for the getMovieByGenre(genre) method. 
 
 ### Reflections
+:watch: This project took me about 2 hours to complete with an additional 1.5 hours for testing and refactoring.</br></br> 
 :bulb: I really enjoyed this coding assigment as it felt like a real life exercise (coming from a frontend background).</br>  
-:bulb: Working with classes when working with object oriented programming is always a good challange, as it as commonly used programming practice. However, normally I would approach such a task using a library/framework such as React as its built in hook useState makes working with classes easier. As well as providing a more straight-forward way of rendering the data to the browser with the JSX syntax.</br>  
-:bulb: It would have been nice to show-case some of my skills within HTML & CSS as well, however as it was not required I decided to focus on the assigned tasks.</br></br> 
-:watch: This project took me about 2 hours to complete with an additional 1.5 hours for testing and refactoring. 
+
+:bulb: It would have been nice to show-case some of my skills within HTML & CSS as well, however as it was not required I decided to focus on the assigned tasks.</br></br>
+:bulb: Working with classes when working with object oriented programming is always a good challange, as it as commonly used programming practice. However, normally I would approach such a task using a library/framework such as React as its built in hook useState makes working with classes easier. As well as providing a more straight-forward way of rendering the data to the browser with the JSX syntax. 
+
