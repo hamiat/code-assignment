@@ -1,6 +1,6 @@
 # Tech Trainee Code Assignment
 
-### Hello and Welcome!
+### Hello and Welcome! :slightly_smiling_face:
 
 This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).
 
@@ -57,13 +57,15 @@ console.log(getAllMovies);
 
 ### Possible improvements
 
-* Three of the methods are using this piece of code to find and compare the input id with the ids of the movies. This can probably can be refactored into a method that can be passed into them to reduce code duplication.
+:sewing_needle: Three of the methods are using this piece of code to find and compare the input id with the ids of the movies. This can probably can be refactored into a method that can be passed into them to reduce code duplication.
  ```javascript
 const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 ```
  
-* Error handling for the getMovieByGenre(genre) method. 
+:sewing_needle: Error handling for the getMovieByGenre(genre) method. 
 
 ### Reflections
-
-I really enjoyed this coding assigment as it felt like a real life exercise (coming from a frontend background). Normally, I would face such a task using a library/framework such as React as its built in hook useState makes working with classes easier, as well as provides a more straight-forward way of rendering the data to thw browser with the JSX syntax .
+:bulb: I really enjoyed this coding assigment as it felt like a real life exercise (coming from a frontend background).</br>  
+:bulb: Working with classes when working with object oriented programming is always a good challange, as it as commonly used programming practice. However, normally I would approach such a task using a library/framework such as React as its built in hook useState makes working with classes easier. As well as providing a more straight-forward way of rendering the data to the browser with the JSX syntax.</br>  
+:bulb: It would have been nice to show-case some of my skills within HTML & CSS as well, however as it was not required I decided to focus on the assigned tasks.</br></br> 
+:watch: This project took me about 2 hours to complete with an additional 1.5 hours for testing and refactoring. 
