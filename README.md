@@ -1,8 +1,8 @@
-# Tech Trainee Code Assignment
+# Tech Trainee Code Assignment<a name="section_name"></a>
 
 ### Hello and Welcome! :slightly_smiling_face:
 
-This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).
+This is a Movie API written as a JavaScript class which containing 11 different methods (cases). The API takes in data from a JSON file (containing movie objects), which is used as input when instantiating the Movie API. 
 
 #### Instructions: 
 
@@ -10,8 +10,10 @@ This is a Movie API written as a JavaScript class which containing 11 different 
 2) You can run each case (method) by passing its declared variable to the console.log() function. </br>
 3) The console will return a result according to its method.</br>
 
-##### An example: 
-The method itself:</br>
+#### An example: 
+Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).</br>
+
+##### The method itself:</br>
 
 ```javascript
  getAllMovies() {
@@ -53,21 +55,31 @@ console.log(getAllMovies);
 10. `setNewTitle(id, newTitle)` changes the title of a movie with a certain id (if found). The updated title sent in as an argument to the method.
 11. `setNewMovie(description, subtitle, url, thumb, title, genre)` allows the user to add a new movie object to the movie list (supply all properties but the “id” and “rating”. The “id” and “rating” properties added internally by the method.
 
-## Possible improvements and reflections.
+## Take-aways
 
-### Possible improvements
+#### Possible improvements </br>
 
 :sewing_needle: Three of the methods are using this piece of code to find and compare the input id with the ids of the movies. This can probably can be refactored into a method that can be passed into them to reduce code duplication.
  ```javascript
 const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
 ```
+:sewing_needle: The methods that sort by rating are quite similar and could possibly be refactored to reduce code duplication as well. </br> 
  
 :sewing_needle: Error handling for the getMovieByGenre(genre) method. 
 
-### Reflections
+#### Reflections </br>
 :watch: This project took me about 2 hours to complete with an additional 1.5 hours for testing and refactoring.</br></br> 
 :bulb: I really enjoyed this coding assigment as it felt like a real life exercise (coming from a frontend background).</br>  
 
 :bulb: It would have been nice to show-case some of my skills within HTML & CSS as well, however as it was not required I decided to focus on the assigned tasks.</br></br>
 :bulb: Working with classes when working with object oriented programming is always a good challange, as it as commonly used programming practice. However, normally I would approach such a task using a library/framework such as React as its built in hook useState makes working with classes easier. As well as providing a more straight-forward way of rendering the data to the browser with the JSX syntax. 
 
+#### Resources </br>
+[Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array "Mozilla Array Methods") </br>
+[Crash course on OOP](https://www.youtube.com/watch?v=vDJpGenyHaA&t=1s "Mozilla Array Methods") 
+
+
+--- 
+
+[Go To Top](#section_name)
+         
