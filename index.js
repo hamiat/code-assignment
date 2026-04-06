@@ -5,7 +5,7 @@ class MovieAPI {
     this.idErrorMessage = "Sorry, could not find a movie with the id.";
   }
 
-  getAllMovies() {
+  initializeMovies() {
     this.movies.forEach((movie, i) => {
       movie.id = i + 1;
       movie.rating = Math.floor(Math.random() * 5 + 1);
@@ -15,61 +15,40 @@ class MovieAPI {
   }
 
   getMoviesSortedByName() {
-    const sortedByTitle = this.movies.sort((a, b) =>
-      a.title.localeCompare(b.title)
-    );
-
-    return sortedByTitle;
+    return [...this.movies].sort((a, b) => a.title.localeCompare(b.title));
   }
 
   getMovieByGenre(genre) {
-    const getGenre = this.movies.filter((movie) => {
-      if (genre.match(movie.genre)) {
-        return movie;
-      }
-    });
-
-    return getGenre;
+    return this.movies.filter((movie) =>
+      movie.genre.toLowerCase().includes(genre.toLowerCase()),
+    );
   }
 
   getBottomToTopRated() {
-    const sortRatings = this.movies.sort((a, b) =>
-      a.rating > b.rating ? 1 : -1
-    );
-
-    return sortRatings;
+    return [...this.movies].sort((a, b) => (a.rating > b.rating ? 1 : -1));
   }
 
   getTopThree() {
-    const topThree = this.movies
+    return [...this.movies]
       .sort((a, b) => (a.rating < b.rating ? 1 : -1))
       .slice(0, 3);
-
-    return topThree;
   }
 
   getTopAndBottomTwo() {
-    const sortedMovies = this.movies.sort((a, b) =>
-      a.rating > b.rating ? 1 : -1
-    );
-    const getTopAndBottomTwo = [
-      ...sortedMovies.slice(0, 2),
-      ...sortedMovies.slice(-2),
-    ];
-
-    return getTopAndBottomTwo;
+    const sortedMovies = [...this.movies].sort((a, b) => a.rating - b.rating);
+    return [...sortedMovies.slice(0, 2), ...sortedMovies.slice(-2)];
   }
 
   getWithoutThumbsAndSubs() {
     const noSubsOrThumbs = this.movies.map(
-      ({ subtitle, thumb, ...rest }) => rest
+      ({ subtitle, thumb, ...rest }) => rest,
     );
 
     return noSubsOrThumbs;
   }
 
   getMovieById(id) {
-    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+    const matchId = this.movies.find((movie) => Number(id) === movie.id);
 
     if (matchId) {
       return matchId;
@@ -79,18 +58,18 @@ class MovieAPI {
   }
 
   deleteMovieById(id) {
-    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+    const index = this.movies.findIndex((movie) => Number(id) === movie.id);
 
-    if (matchId) {
-      this.movies.splice(matchId, 1);
+    if (index !== -1) {
+      this.movies.splice(index, 1);
       return this.movies;
-    } else {
-      return this.idErrorMessage;
     }
+
+    return this.idErrorMessage;
   }
 
   setNewTitle(id, newTitle) {
-    const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+    const matchId = this.movies.find((movie) => Number(id) === movie.id);
 
     if (matchId) {
       matchId.title = newTitle;
@@ -109,7 +88,7 @@ class MovieAPI {
       title,
       genre,
     });
-    this.getAllMovies();
+    this.initializeMovies();
 
     return this.movies;
   }
@@ -118,7 +97,7 @@ class MovieAPI {
 const API = new MovieAPI(moviesData);
 
 //Cases (methods)
-const getAllMovies = API.getAllMovies();
+const getAllMovies = API.initializeMovies();
 const getMoviesSortedByName = API.getMoviesSortedByName();
 const getMovieByGenre = API.getMovieByGenre("Action");
 const getBottomToTopRated = API.getBottomToTopRated();
@@ -134,7 +113,7 @@ const setNewMovie = API.setNewMovie(
   "url",
   "pic.img",
   "Girl Fighter",
-  "Action"
+  "Action",
 );
 
 //Insert Case here to what it returns
