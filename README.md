@@ -11,12 +11,12 @@ This is a Movie API written as a JavaScript class which containing 11 different 
 3) The console will return a result according to its method.</br>
 
 #### An example: 
-Below is an example of the `getAllMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).</br>
+Below is an example of the `initializeMovies()` method which supplies each movie object with an id and a rating property before storing it, and then returns all the movies. Error handling has been added (for the methods that use input id to retrieve or change data).</br>
 
 ##### The method itself:</br>
 
 ```javascript
- getAllMovies() {
+ initializeMovies() {
     this.movies.forEach((movie, i) => {
       movie.id = i + 1;
       movie.rating = Math.floor(Math.random() * 5 + 1);
@@ -30,7 +30,7 @@ Below is an example of the `getAllMovies()` method which supplies each movie obj
 
 ```javascript
 const API = new MovieAPI(moviesData);
-const getAllMovies = API.getAllMovies();
+const getAllMovies = API.initializeMovies();
 console.log(getAllMovies);
 ```
 
@@ -61,7 +61,7 @@ console.log(getAllMovies);
 
 :sewing_needle: Three of the methods are using this piece of code to find and compare the input id with the ids of the movies. This can probably can be refactored into a method that can be passed into them to reduce code duplication.
  ```javascript
-const matchId = this.movies.find((movie) => Math.floor(id) === movie.id);
+const matchId = this.movies.find((movie) => Number(id) === movie.id);
 ```
 :sewing_needle: The methods that sort by rating are quite similar and could possibly be refactored to reduce code duplication as well. </br> 
  
